@@ -1,0 +1,16 @@
+<h1>LongestWord#game</h1>
+<p>Find me in app/views/longest_word/game.html.erb</p>
+
+
+<h2> Welcome to the longest word-game! </h2>
+
+<h3> <%= @grid %></h3>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :start_time, @start_time %>
+  <label for="question">Attempt</label>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="attempt" placeholder="longest word?">
+  <%= hidden_field_tag :grid_instance, @grid %>
+  <input type="submit" value="Go on!">
+</form>
